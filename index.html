@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <link rel="icon" type="image/ico" href="img/favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fonts.css">
+    <link rel="stylesheet" href="color.css">
+    <script src="script.js"></script>
+    <script src="color.js"></script>
+</head>
+
+<body onload="loadPokemon()">
+    <video class="bg-video" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0"> 
+        <source src="./img/pokemon-bg.mp4" type="video/mp4"> 
+    </video>
+    <header>
+        <div class="header-title"><b>My Pokédex</b><img class="logo" src="img/pokemon-pikachu_640.png">
+            <div class="search-container">
+                <input type="text" id="search" onkeydown="searchPokemon()" class="header-search" placeholder="Search Pokemon">
+                <button title="Reset" onclick="clearSearchResult()" class="btn-clear">X</button>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div id="pokecardShow" class="pokemon-card">
+            <div id="pokemonCard" class="capital-letter"></div>
+        </div>
+    </section>
+    <div id="overview" class="capital-letter"></div>
+</body>
+
+</html>

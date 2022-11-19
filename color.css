@@ -1,0 +1,122 @@
+/* Border-Color for preview-box */
+.b-bug {
+    border: 8px solid rgb(221, 179, 106);
+}
+
+.b-dragon {
+    border: 8px solid rgb(229, 155, 117);
+}
+
+.b-electric {
+    border: 8px solid rgb(196, 223, 131);
+}
+
+.b-fairy {
+    border: 8px solid rgb(204, 151, 219);
+}
+
+.b-fighting {
+    border: 8px solid rgb(164, 125, 201);
+}
+
+.b-fire {
+    border: 8px solid rgb(251, 108, 108);
+}
+
+.b-ghost {
+    border: 8px solid rgb(173, 230, 216);
+}
+
+.b-grass {
+    border: 8px solid rgb(142, 234, 142);
+}
+
+.b-ground {
+    border: 8px solid rgb(228, 204, 118);
+}
+
+.b-ice {
+    border: 8px solid rgb(129, 194, 223);
+}
+
+.b-normal {
+    border: 8px solid rgb(146, 200, 191);
+}
+
+.b-poison {
+    border: 8px solid rgb(222, 244, 114);
+}
+
+.b-psychic {
+    border: 8px solid rgb(237, 234, 132);
+}
+
+.b-rock {
+    border: 8px solid rgb(178, 168, 150);
+}
+
+.b-water {
+    border: 8px solid rgb(151, 187, 216);
+}
+
+
+/* Background-Color for title-stats-container */
+.bg-bug {
+    background-color: rgb(221, 179, 106);
+}
+
+.bg-dragon {
+    background-color: rgb(229, 155, 117);
+}
+
+.bg-electric {
+    background-color: rgb(196, 223, 131);
+}
+
+.bg-fairy {
+    background-color: rgb(204, 151, 219);
+}
+
+.bg-fighting {
+    background-color: rgb(164, 125, 201);
+}
+
+.bg-fire {
+    background-color: rgb(251, 108, 108);
+}
+
+.bg-ghost {
+    background-color: rgb(173, 230, 216);
+}
+
+.bg-grass {
+    background-color: rgb(142, 234, 142);
+}
+
+.bg-ground {
+    background-color: rgb(228, 204, 118);
+}
+
+.bg-ice {
+    background-color: rgb(129, 194, 223);
+}
+
+.bg-normal {
+    background-color: rgb(146, 200, 191);
+}
+
+.bg-poison {
+    background-color: rgb(222, 244, 114);
+}
+
+.bg-psychic {
+    background-color: rgb(237, 234, 132);
+}
+
+.bg-rock {
+    background-color: rgb(178, 168, 150);
+}
+
+.bg-water {
+    background-color: rgb(151, 187, 216);
+}
