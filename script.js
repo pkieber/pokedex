@@ -32,7 +32,9 @@ function renderOverviewHTML(i) {
     <div onclick="showCard(${i})" id="previewBox${i}" class="preview-box">
         <div>#${i}</div>
         <div><b>${currentPokemon['name']}</b></div>
-        <img class="preview-pic" src="${currentPokemon['sprites']['other']['dream_world']['front_default']}">
+        <div class="preview-pic-container">
+            <img class="preview-pic" src="${currentPokemon['sprites']['other']['dream_world']['front_default']}">
+        </div>
         <div class="pokemon-type-preview">${currentPokemon['types']['0']['type']['name']}</div>
     </div>
     `
@@ -173,7 +175,9 @@ function searchPokemonHTML(result, ID){
     <div onclick="showCard(${ID})" id="previewBox${ID}" class="preview-box">
         <div>#${ID}</div>
         <div><b>${result['name']}</b></div>
-        <img class="preview-pic" src="${result['sprites']['other']['dream_world']['front_default']}">
+        <div class="preview-pic-container">
+            <img class="preview-pic" src="${result['sprites']['other']['dream_world']['front_default']}">
+        </div>
         <div class="pokemon-type-preview">${result['types']['0']['type']['name']}</div>
     </div>
     `;
