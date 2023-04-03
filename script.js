@@ -7,6 +7,9 @@ let source = `https://pokeapi.co/api/v2/pokemon/`;
 let allPokemon = [];
 
 
+/**
+ * This async function will load the Pokemon data from the Pokemon API. 
+ */
 async function loadPokemon() {
     for (let i = firstPokemon; i < lastPokemon; i++) {
         let url = source+`${i}`;
@@ -18,7 +21,10 @@ async function loadPokemon() {
 }
 
 
-// Show all Pokemon (from 'firstPokemon' to 'lastPokemon')
+/**
+ * This function will show all Pokemon (from 'firstPokemon' to 'lastPokemon').
+ * @param {*} i 
+ */
 function renderOverview(i) { // OKAY
     document.getElementById('pokecardShow').classList.add('hidden');
     let overview = document.getElementById('overview');
@@ -40,8 +46,10 @@ function renderOverviewHTML(i) {
     `
 }
 
-
-// Onclick-Function to show Pokemon-Card
+/**
+ * This function is used to show the Pokemon-Card of the selection.
+ * @param {*} i 
+ */
 async function showCard(i) {
     let url = source+`${i}`;
     let response = await fetch(url);
@@ -107,8 +115,9 @@ function showCardHTML(i) {
     `
 }
 
-
-// Check if Pokemon has 1 or 2 types of characteristics
+/**
+ * This function will check if Pokemon has 1 or 2 types of characteristics. 
+ */
 function checkTypesOfPokemon() {
     let typeData = selectedPokemon['types'].length;
     if (typeData ==1){
@@ -184,6 +193,18 @@ function searchPokemonHTML(result, ID){
 }
 
 
+/**
+ * This function will refresh the page.
+ */
 function clearSearchResult() {
     location.reload();
 }
+
+
+/**
+ * This function will display a loading overlay with a spinner when page is loading.
+ */
+window.addEventListener('load', function() {
+    var loader = document.getElementById('loading-overlay');
+    loader.style.display = 'none';
+});  
