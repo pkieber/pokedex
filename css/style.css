@@ -313,6 +313,35 @@ section {
     animation: spin 2s linear infinite;
 }
 
+
+/* Progress bar for stats */
+.progress {
+    height: 20px; /* Sets the height of the progress bar */
+    width: 150px;
+}
+
+.progress-bar {
+    font-size: 14px;
+    line-height: 16px;
+    text-align: start;
+    padding-left: 10px;
+}
+
+
+.progress-bar-striped {
+    background-image: linear-gradient(45deg, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent); /* Adds diagonal stripes to the progress bar */
+    animation: progress-bar-stripes 1s linear infinite; /* Animates the stripes to move across the progress bar */
+}
+
+@keyframes progress-bar-stripes {
+    from {
+      background-position: 1rem 0; /* Sets the starting position of the stripes */
+    }
+    to {
+      background-position: 0 0; /* Sets the ending position of the stripes */
+    }
+}
+
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
@@ -373,6 +402,10 @@ section {
 
     .stats-table {
         width: 220px;
+    }
+
+    .progress {
+        width: 110px;
     }
 }
 
