@@ -6,7 +6,7 @@ function renderOverviewHTML(i) {
         <div class="preview-pic-container">
             <img class="preview-pic" src="${currentPokemon['sprites']['other']['dream_world']['front_default']}">
         </div>
-        <div class="pokemon-type-preview">${currentPokemon['types']['0']['type']['name']}</div>
+        <div id="previewTypeColor${i}" class="pokemon-type-preview">${currentPokemon['types']['0']['type']['name']}</div>
     </div>
     `
 }

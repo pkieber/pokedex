@@ -72,8 +72,10 @@ function matchColorBorderSearch (result, ID){
  */
 function ColorBorder(typeBackground, typeID) {
     let borderColor = borderColors[typeBackground];
+    let backgroundColor = backgroundColors[typeBackground];
     if (borderColor) {
         document.getElementById(`previewBox${typeID}`).classList.add(borderColor);
+        document.getElementById(`previewTypeColor${typeID}`).classList.add(backgroundColor);
     }
 }
 
