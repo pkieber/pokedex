@@ -85,7 +85,7 @@ function searchPokemonHTML(result, ID){
         <div class="preview-pic-container">
             <img class="preview-pic" src="${result['sprites']['other']['dream_world']['front_default']}">
         </div>
-        <div class="pokemon-type-preview">${result['types']['0']['type']['name']}</div>
+        <div id="previewTypeColor${ID}" class="pokemon-type-preview">${result['types']['0']['type']['name']}</div>
     </div>
     `;
 }

@@ -25,8 +25,11 @@
     <header>
         <div class="header-title"><b>My Pokédex</b><img class="logo" src="img/pokemon-pikachu_640.png">
             <div class="search-container">
-                <input type="text" id="search" onkeydown="searchPokemon()" class="header-search" placeholder="Search Pokemon">
-                <button title="Reset" onclick="clearSearchResult()" class="btn-clear">X</button>
+                <div class="search-box">
+                    <input id="search" type="text" placeholder="Search Pokemon" onkeydown="searchPokemon()">
+                    <div class="dividing-line"></div>
+                    <div class="clear-icon" title="Reset" onclick="clearSearchResult()"><img src="img/xmark.svg" alt=""></div>
+                </div>
             </div>
         </div>
     </header>

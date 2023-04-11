@@ -58,8 +58,7 @@ function matchColorBorder (typeID){
  * @param {Object} result - The search result object returned by the API, containing information about the Pokemon.
  * @param {number} ID - The ID of the preview box (e.g. 0, 1, etc.) to apply the border color to.
  */
-function matchColorBorderSearch (result, ID){
-    let typeID = ID;
+function matchColorBorderSearch (result, typeID){
     let typeBackground = result['types']['0']['type']['name']; 
     ColorBorder(typeBackground, typeID);
 }
@@ -73,7 +72,7 @@ function matchColorBorderSearch (result, ID){
 function ColorBorder(typeBackground, typeID) {
     let borderColor = borderColors[typeBackground];
     let backgroundColor = backgroundColors[typeBackground];
-    if (borderColor) {
+    if (borderColor || backgroundColor) {
         document.getElementById(`previewBox${typeID}`).classList.add(borderColor);
         document.getElementById(`previewTypeColor${typeID}`).classList.add(backgroundColor);
     }
