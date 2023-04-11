@@ -325,7 +325,7 @@ section {
 /* Progress bar for stats */
 .progress {
     height: 20px; /* Sets the height of the progress bar */
-    width: 150px;
+    width: 120px;
 }
 
 .progress-bar {
@@ -386,6 +386,7 @@ section {
 
     .progress {
         width: 90px;
+    }
 }
 
 @media (max-width: 400px) {
