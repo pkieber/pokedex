@@ -120,9 +120,12 @@ function renderPreviousPokemon(i) {
 
 
 /**
- * Search Pokemon by Name.
+ * Search Pokemon by Name. 
+ * Once typing starts, search icon will be hidden and close icon shown,
  */
 function searchPokemon() {
+    document.getElementById('searchIcon').classList.add('hidden');
+    document.getElementById('closeIcon').classList.remove('hidden');
     let search = document.getElementById('search').value;
     search = search.toLowerCase();
     document.getElementById('overview').innerHTML = '';
@@ -139,10 +142,14 @@ function searchPokemon() {
 
 
 /**
- * This function will refresh the page.
+ * This function will reset the search bar and refresh the page.
+ * Search icon will be shown and close icon hidden again.
  */
 function clearSearchResult() {
-    location.reload();
+    document.getElementById('search').value = '';
+    searchPokemon();
+    document.getElementById('searchIcon').classList.remove('hidden');
+    document.getElementById('closeIcon').classList.add('hidden');
 }
 
 
