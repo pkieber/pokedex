@@ -84,6 +84,16 @@ function closeCard() {
 
 
 /**
+ * Closes selection when clicking on background.
+ */
+window.addEventListener("click", function(event) {
+    if (event.target == document.getElementById("section")) {
+        closeCard();
+    }
+});
+
+
+/**
  * Onclick to select the next Pokemon.
  * @param {*} i 
  */
