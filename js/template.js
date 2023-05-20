@@ -1,8 +1,7 @@
 function renderOverviewHTML(i) {
     return `
     <div onclick="showCard(${i})" id="previewBox${i}" class="preview-box">
-        <div>#${i}</div>
-        <div><b>${currentPokemon['name']}</b></div>
+        <div class="pokemon-title-overview"><b>${currentPokemon['name']}</b>#${i}</div>
         <div class="preview-pic-container">
             <img class="preview-pic" src="${currentPokemon['sprites']['other']['dream_world']['front_default']}">
         </div>
@@ -16,10 +15,7 @@ function showCardHTML(i) {
     return `
     <div id="titleStats" class="title-stats-container capital-letter">
         <div class="pokemon-title">
-            <div class="poke-number">
-                <h3>#${i}</h3>
-            </div>
-            <h1><b>${selectedPokemon['name']}</b></h1>
+            <p>${selectedPokemon['name']}</p><p>#${i}</p>
         </div>
         <div class="pokemon-type-box">
             <h3 id="pokemonType1" class="pokemon-type"></h3>
@@ -28,9 +24,14 @@ function showCardHTML(i) {
     </div>
     <div class="base-stats-container">
         <div class="img-container">
+            <img title="Previous Pokemon" id="previousPokemon" onclick="renderPreviousPokemon(${i})" class="pokemon-image-small" src="${previousPokemon}">
             <img class="pokemon-image" src="${selectedPokemon['sprites']['other']['dream_world']['front_default']}">
+            <img title="Next Pokemon" id="nextPokemon" onclick="renderNextPokemon(${i})" class="pokemon-image-small" src="${nextPokemon}"> 
         </div>
-        <h2>Base Stats</h2>
+        <div class="pagination">
+            <a href="#" class="active">Base Stats</a>
+            <!--<a href="#">Description</a>-->
+        </div>
         <div class="stats-table">
             <div>HP</div>        
             <div class="progress">
@@ -80,8 +81,7 @@ function showCardHTML(i) {
 function searchPokemonHTML(result, ID){
     return `
     <div onclick="showCard(${ID})" id="previewBox${ID}" class="preview-box">
-        <div>#${ID}</div>
-        <div><b>${result['name']}</b></div>
+        <div class="pokemon-title-overview"><b>${result['name']}</b>#${ID}</div>
         <div class="preview-pic-container">
             <img class="preview-pic" src="${result['sprites']['other']['dream_world']['front_default']}">
         </div>

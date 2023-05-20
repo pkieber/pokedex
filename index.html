@@ -13,7 +13,6 @@
     <script src="./js/color.js"></script>
     <script src="./js/template.js"></script>
 </head>
-
 <body onload="loadPokemon()">
     <div id="loading-overlay">
         <div class="loader"></div>
@@ -23,13 +22,14 @@
         <source src="./img/pokemon-planet.mp4" type="video/mp4"> 
     </video>
     <header>
-        <div class="header-container"><div class="title">Pokédex<img class="logo" src="img/pokemon-pikachu_640.png"></div>
-            <div class="search-container">
-                <div class="search-box">
-                    <input id="search" type="text" placeholder="Search Pokemon" onkeydown="searchPokemon()">
+        <img class="logo" src="img/pokedex.png">
+        <div class="search-container">
+            <div class="search-box">
+                <input id="search" class="search-input" type="text" placeholder="Search Pokemon" onkeydown="searchPokemon()">
+                <a class="search-btn" href="#">
                     <div id="searchIcon" class="clear-icon" title="Search"><img src="img/magnifyingglass.circle.svg" alt=""></div>
                     <div id="closeIcon" class="clear-icon hidden" title="Clear" onclick="clearSearchResult()"><img src="img/x.circle.svg" alt=""></div>
-                </div>
+                </a>
             </div>
         </div>
     </header>
@@ -40,5 +40,4 @@
     </section>
     <div id="overview" class="capital-letter"></div>
 </body>
-
 </html>

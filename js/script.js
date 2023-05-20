@@ -4,8 +4,10 @@
  */
 let currentPokemon;
 let selectedPokemon;
+let previousPokemon;
+let nextPokemon;
 let firstPokemon = 1;
-let lastPokemon = 79;
+let lastPokemon = 101;
 let source = `https://pokeapi.co/api/v2/pokemon/`;
 let allPokemon = [];
 
@@ -28,7 +30,7 @@ async function loadPokemon() {
  * This function will show all Pokemon (from 'firstPokemon' to 'lastPokemon').
  * @param {*} i 
  */
-function renderOverview(i) { // OKAY
+function renderOverview(i) {
     document.getElementById('pokecardShow').classList.add('hidden');
     let overview = document.getElementById('overview');
     overview.innerHTML += renderOverviewHTML(i);
@@ -44,6 +46,8 @@ async function showCard(i) {
     let url = source+`${i}`;
     let response = await fetch(url);
     selectedPokemon = await response.json();
+    previousPokemon = selectedPokemon['sprites']['other']['dream_world']['front_default'];
+    nextPokemon = selectedPokemon['sprites']['other']['dream_world']['front_default'];
     document.getElementById('overview').classList.add('fixed');
     document.getElementById('overview').classList.add('no-click');
     document.getElementById('overview').classList.add('dimming');

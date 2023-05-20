@@ -1,122 +1,140 @@
+:root {
+    --bug: #ACC23E;
+    --dragon: #8572C8;	
+    --electric:	#E7C536; 
+    --fairy: #E8B0EB;
+    --fighting:	#C45D4C;	
+    --fire: #E87A3D;
+    --ghost: #816DB6;
+    --grass: #82C95B;
+    --ground: #CEB250;
+    --ice: #81CFD7;
+    --normal: #ACAD99;	
+    --poison: #B369AF;
+    --psychic: #E96C95; 
+    --rock: #BAA85E;
+    --water: #639CE4; 
+}
+
 /* Border-Color for preview-box */
 .b-bug {
-    border: 8px solid rgb(221, 179, 106);
+    border: 8px solid var(--bug);
 }
 
 .b-dragon {
-    border: 8px solid rgb(229, 155, 117);
+    border: 8px solid var(--dragon);
 }
 
 .b-electric {
-    border: 8px solid rgb(196, 223, 131);
+    border: 8px solid var(--electric);
 }
 
 .b-fairy {
-    border: 8px solid rgb(204, 151, 219);
+    border: 8px solid var(--fairy);
 }
 
 .b-fighting {
-    border: 8px solid rgb(164, 125, 201);
+    border: 8px solid var(--fighting);
 }
 
 .b-fire {
-    border: 8px solid rgb(251, 108, 108);
+    border: 8px solid var(--fire);
 }
 
 .b-ghost {
-    border: 8px solid rgb(173, 230, 216);
+    border: 8px solid var(--ghost);
 }
 
 .b-grass {
-    border: 8px solid rgb(142, 234, 142);
+    border: 8px solid var(--grass);
 }
 
 .b-ground {
-    border: 8px solid rgb(228, 204, 118);
+    border: 8px solid var(--ground);
 }
 
 .b-ice {
-    border: 8px solid rgb(129, 194, 223);
+    border: 8px solid var(--ice);
 }
 
 .b-normal {
-    border: 8px solid rgb(146, 200, 191);
+    border: 8px solid var(--normal);
 }
 
 .b-poison {
-    border: 8px solid rgb(222, 244, 114);
+    border: 8px solid var(--poison);
 }
 
 .b-psychic {
-    border: 8px solid rgb(237, 234, 132);
+    border: 8px solid var(--psychic);
 }
 
 .b-rock {
-    border: 8px solid rgb(178, 168, 150);
+    border: 8px solid var(--rock);
 }
 
 .b-water {
-    border: 8px solid rgb(151, 187, 216);
+    border: 8px solid var(--water);
 }
 
 
 /* Background-Color for title-stats-container */
 .bg-bug {
-    background-color: rgb(221, 179, 106);
+    background-color: var(--bug);
 }
 
 .bg-dragon {
-    background-color: rgb(229, 155, 117);
+    background-color: var(--dragon);
 }
 
 .bg-electric {
-    background-color: rgb(196, 223, 131);
+    background-color: var(--electric);
 }
 
 .bg-fairy {
-    background-color: rgb(204, 151, 219);
+    background-color: var(--fairy);
 }
 
 .bg-fighting {
-    background-color: rgb(164, 125, 201);
+    background-color: var(--fighting);
 }
 
 .bg-fire {
-    background-color: rgb(251, 108, 108);
+    background-color: var(--fire);
 }
 
 .bg-ghost {
-    background-color: rgb(173, 230, 216);
+    background-color: var(--ghost);
 }
 
 .bg-grass {
-    background-color: rgb(142, 234, 142);
+    background-color: var(--grass);
 }
 
 .bg-ground {
-    background-color: rgb(228, 204, 118);
+    background-color: var(--ground);
 }
 
 .bg-ice {
-    background-color: rgb(129, 194, 223);
+    background-color: var(--ice);
 }
 
 .bg-normal {
-    background-color: rgb(146, 200, 191);
+    background-color: var(--normal);
 }
 
 .bg-poison {
-    background-color: rgb(222, 244, 114);
+    background-color: var(--poison);
 }
 
 .bg-psychic {
-    background-color: rgb(237, 234, 132);
+    background-color: var(--psychic);
 }
 
 .bg-rock {
-    background-color: rgb(178, 168, 150);
+    background-color: var(--rock);
 }
 
 .bg-water {
-    background-color: rgb(151, 187, 216);
+    background-color: var(--water);
 }
