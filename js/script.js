@@ -13,7 +13,7 @@ let allPokemon = [];
 
 
 /**
- * This async function will load the Pokemon data from the Pokemon API. 
+ * Loads the Pokemon data from the Pokemon API. 
  */
 async function loadPokemon() {
     for (let i = firstPokemon; i < lastPokemon; i++) {
@@ -27,10 +27,10 @@ async function loadPokemon() {
 
 
 /**
- * This function will show all Pokemon (from 'firstPokemon' to 'lastPokemon').
+ * Displays all Pokemon (from 'firstPokemon' to 'lastPokemon').
  * @param {*} i 
  */
-function renderOverview(i) {
+async function renderOverview(i) {
     document.getElementById('pokecardShow').classList.add('hidden');
     let overview = document.getElementById('overview');
     overview.innerHTML += renderOverviewHTML(i);
@@ -39,7 +39,23 @@ function renderOverview(i) {
 
 
 /**
- * This function is used to show the Pokemon-Card of the selection.
+ * Sets up event listeners to track active links in the pagination navigation.
+ * Removes "active" class from all navigation links and adds it to the clicked link.
+* @param {Event} event - The click event object.
+ */
+function checkActiveLink() {
+    navbar = document.querySelector(".pagination").querySelectorAll("a");
+    navbar.forEach((element) => {
+        element.addEventListener("click", function () {
+        navbar.forEach((nav) => nav.classList.remove("active"));
+        this.classList.add("active");
+        });
+    });
+}
+
+
+/**
+ * Shows the details of the selected Pokemon card.
  * @param {*} i 
  */
 async function showCard(i) {
@@ -54,12 +70,26 @@ async function showCard(i) {
     document.getElementById('pokecardShow').classList.remove('hidden');
     document.getElementById('pokemonCard').innerHTML = showCardHTML(i);
     checkTypesOfPokemon();
+    checkActiveLink();
 }
 
 
 /**
- * Some Pokemon have more than 1 characteristics.
- * This function will check if Pokemon has 1 or 2 types of characteristics. 
+ * Allows switching between different index cards. 
+ */
+function switchStats1() {
+    document.getElementById('baseStats1').classList.remove('hidden');
+    document.getElementById('baseStats2').classList.add('hidden');
+}
+
+function switchStats2() {
+    document.getElementById('baseStats1').classList.add('hidden');
+    document.getElementById('baseStats2').classList.remove('hidden');
+}
+
+
+/**
+ * Checks if Pokemon has 1 or 2 types of characteristics. 
  */
 function checkTypesOfPokemon() {
     let typeData = selectedPokemon['types'].length;
@@ -77,7 +107,7 @@ function checkTypesOfPokemon() {
 
 
 /**
- * Onclick to close selection.
+ * Closes selection by clicking the icon.
  */
 function closeCard() {
     document.getElementById('overview').classList.remove('fixed');
@@ -88,7 +118,7 @@ function closeCard() {
 
 
 /**
- * Closes selection when clicking on background.
+ * Closes selection by clicking on background.
  */
 window.addEventListener("click", function(event) {
     if (event.target == document.getElementById("section")) {
@@ -98,7 +128,7 @@ window.addEventListener("click", function(event) {
 
 
 /**
- * Onclick to select the next Pokemon.
+ * Selects the next Pokemon by clicking on icon. 
  * @param {*} i 
  */
 function renderNextPokemon(i) {
@@ -111,7 +141,7 @@ function renderNextPokemon(i) {
 
 
 /**
- * Onclick to select the previous Pokemon.
+ * Selects the previous Pokemon by clicking on icon. 
  * @param {*} i 
  */
 function renderPreviousPokemon(i) {
@@ -124,8 +154,8 @@ function renderPreviousPokemon(i) {
 
 
 /**
- * Search Pokemon by Name. 
- * Once typing starts, search icon will be hidden and close icon shown,
+ * Searches Pokemon by Name. 
+ * Once typing starts, search-icon will be hidden and close-icon shown.
  */
 function searchPokemon() {
     document.getElementById('searchIcon').classList.add('hidden');
@@ -146,7 +176,7 @@ function searchPokemon() {
 
 
 /**
- * This function will reset the search bar and refresh the page.
+ * Resets the search bar and refreshes the page.
  * Search icon will be shown and close icon hidden again.
  */
 function clearSearchResult() {
@@ -158,7 +188,7 @@ function clearSearchResult() {
 
 
 /**
- * This function will display a loading overlay with a spinner when page is loading.
+ * Displays a loading overlay with a spinner when page is loading.
  */
 window.addEventListener('load', function() {
     var loader = document.getElementById('loading-overlay');

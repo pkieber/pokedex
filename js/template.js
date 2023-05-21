@@ -28,44 +28,66 @@ function showCardHTML(i) {
             <img class="pokemon-image" src="${selectedPokemon['sprites']['other']['dream_world']['front_default']}">
             <img title="Next Pokemon" id="nextPokemon" onclick="renderNextPokemon(${i})" class="pokemon-image-small" src="${nextPokemon}"> 
         </div>
-        <div class="pagination">
-            <a href="#" class="active">Base Stats</a>
-            <!--<a href="#">Description</a>-->
+        <div id="statsLink" class="pagination">
+            <a href="#" onclick="switchStats1()" class="active">Base Stats</a>
+            <a href="#" onclick="switchStats2()">Info</a>
         </div>
-        <div class="stats-table">
-            <div>HP</div>        
-            <div class="progress">
-                <div id="bar0" class="progress-bar progress-bar-striped" role="progressbar" style="width: ${(selectedPokemon['stats']['0']['base_stat'])}%">${(selectedPokemon['stats']['0']['base_stat'])}</div>
+        <div id="baseStats1">
+            <div class="stats-table">
+                <div>HP</div>        
+                <div class="progress">
+                    <div id="bar0" class="progress-bar progress-bar-striped" role="progressbar" style="width: ${(selectedPokemon['stats']['0']['base_stat'])}%">${(selectedPokemon['stats']['0']['base_stat'])}</div>
+                </div>
+            </div>
+            <div class="stats-table">
+                <div>Attack</div>        
+                <div class="progress">
+                    <div id="bar1" class="progress-bar progress-bar-striped" role="progressbar" style="width: ${(selectedPokemon['stats']['1']['base_stat'])}%">${(selectedPokemon['stats']['1']['base_stat'])}</div>
+                </div>
+            </div>
+            <div class="stats-table">
+                <div>Defense</div>        
+                <div class="progress">
+                    <div id="bar2" class="progress-bar progress-bar-striped" role="progressbar" style="width: ${(selectedPokemon['stats']['2']['base_stat'])}%">${(selectedPokemon['stats']['2']['base_stat'])}</div>
+                </div>
+            </div>
+            <div class="stats-table">
+                <div>Sp. Attack</div>        
+                <div class="progress">
+                    <div id="bar3" class="progress-bar progress-bar-striped" role="progressbar" style="width: ${(selectedPokemon['stats']['3']['base_stat'])}%">${(selectedPokemon['stats']['3']['base_stat'])}</div>
+                </div>
+            </div>
+            <div class="stats-table">
+                <div>Sp. Defense</div>        
+                <div class="progress">
+                    <div id="bar4" class="progress-bar progress-bar-striped" role="progressbar" style="width: ${(selectedPokemon['stats']['4']['base_stat'])}%">${(selectedPokemon['stats']['4']['base_stat'])}</div>
+                </div>
+            </div>
+            <div class="stats-table">
+                <div>Speed</div>        
+                <div class="progress">
+                    <div id="bar5" class="progress-bar progress-bar-striped" role="progressbar" style="width: ${(selectedPokemon['stats']['5']['base_stat'])}%">${(selectedPokemon['stats']['5']['base_stat'])}</div>
+                </div>
             </div>
         </div>
-        <div class="stats-table">
-            <div>Attack</div>        
-            <div class="progress">
-                <div id="bar1" class="progress-bar progress-bar-striped" role="progressbar" style="width: ${(selectedPokemon['stats']['1']['base_stat'])}%">${(selectedPokemon['stats']['1']['base_stat'])}</div>
+        <div id="baseStats2" class="hidden">
+            <div class="stats-table">
+                <div>Species</div>        
+                <div class="progress info-stats">
+                <div class="stats-species">${(selectedPokemon['species']['name'])}</div>
+                </div>
             </div>
-        </div>
-        <div class="stats-table">
-            <div>Defense</div>        
-            <div class="progress">
-                <div id="bar2" class="progress-bar progress-bar-striped" role="progressbar" style="width: ${(selectedPokemon['stats']['2']['base_stat'])}%">${(selectedPokemon['stats']['2']['base_stat'])}</div>
+            <div class="stats-table">
+                <div>Height</div>        
+                <div class="progress info-stats">
+                    <div class="stats">${(selectedPokemon['height'])*10} cm</div>
+                </div>
             </div>
-        </div>
-        <div class="stats-table">
-            <div>Sp. Attack</div>        
-            <div class="progress">
-                <div id="bar3" class="progress-bar progress-bar-striped" role="progressbar" style="width: ${(selectedPokemon['stats']['3']['base_stat'])}%">${(selectedPokemon['stats']['3']['base_stat'])}</div>
-            </div>
-        </div>
-        <div class="stats-table">
-            <div>Sp. Defense</div>        
-            <div class="progress">
-                <div id="bar4" class="progress-bar progress-bar-striped" role="progressbar" style="width: ${(selectedPokemon['stats']['4']['base_stat'])}%">${(selectedPokemon['stats']['4']['base_stat'])}</div>
-            </div>
-        </div>
-        <div class="stats-table">
-            <div>Speed</div>        
-            <div class="progress">
-                <div id="bar5" class="progress-bar progress-bar-striped" role="progressbar" style="width: ${(selectedPokemon['stats']['5']['base_stat'])}%">${(selectedPokemon['stats']['5']['base_stat'])}</div>
+            <div class="stats-table">
+                <div>Weight</div>        
+                <div class="progress info-stats">
+                <div class="stats">${(selectedPokemon['weight'])/10} kg</div>
+                </div>
             </div>
         </div>
     </div>

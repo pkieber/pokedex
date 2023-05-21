@@ -218,6 +218,18 @@ section {
     box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%);
 }
 
+#baseStats1, #baseStats2 {
+    height: 120px;
+}
+
+.stats {
+    text-transform: lowercase;
+}
+
+.stats-species {
+    text-transform: capitalize;
+}
+
 .stats-table {
     display: flex;
     justify-content: space-between;
@@ -337,7 +349,6 @@ section {
     animation: spin 2s linear infinite;
 }
 
-
 /* Progress bar for stats */
 .progress {
     height: 20px; /* Sets the height of the progress bar */
@@ -351,7 +362,6 @@ section {
     text-align: start;
     padding-left: 10px;
 }
-
 
 .progress-bar-striped {
     background-image: linear-gradient(45deg, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent); /* Adds diagonal stripes to the progress bar */
@@ -372,6 +382,11 @@ section {
     100% { transform: rotate(360deg); }
 }
 
+.info-stats {
+    color: rgb(60, 60, 60)!important;
+}
+
+/* Stats links */
 .pagination {
     display: inline-block;
     padding-top: 15px;
@@ -386,7 +401,7 @@ section {
 }
 
 .pagination a.active {
-    background-color: #4CAF50;
+    background-color: var(--water);
     color: white;
     border-radius: 5px;
 }
