@@ -1,3 +1,8 @@
+/**
+ * Returns the HTML string for the overview of a Pokemon.
+ * @param {number} i - The index of the current Pokemon to be displayed.
+ * @return {string} - The HTML string for the overview of the Pokemon.
+ */
 function renderOverviewHTML(i) {
     return `
     <div onclick="showCard(${i})" id="previewBox${i}" class="preview-box">
@@ -11,6 +16,11 @@ function renderOverviewHTML(i) {
 }
 
 
+/**
+ * Returns the HTML string for the detailed view of a Pokemon.
+ * @param {number} i - The index of the current Pokemon to be displayed.
+ * @return {string} - The HTML string for the detailed view of the Pokemon.
+ */
 function showCardHTML(i) {
     return `
     <div id="titleStats" class="title-stats-container capital-letter">
@@ -24,9 +34,9 @@ function showCardHTML(i) {
     </div>
     <div class="base-stats-container">
         <div class="img-container">
-            <img title="Previous Pokemon" id="previousPokemon" onclick="renderPreviousPokemon(${i})" class="pokemon-image-small" src="${previousPokemon}">
+            <img title="Previous Pokemon" id="previousPokemon" onclick="renderPreviousPokemon(${i})" class="pokemon-image-small" src="${previousPokemon['sprites']['other']['dream_world']['front_default']}">
             <img class="pokemon-image" src="${selectedPokemon['sprites']['other']['dream_world']['front_default']}">
-            <img title="Next Pokemon" id="nextPokemon" onclick="renderNextPokemon(${i})" class="pokemon-image-small" src="${nextPokemon}"> 
+            <img title="Next Pokemon" id="nextPokemon" onclick="renderNextPokemon(${i})" class="pokemon-image-small" src="${nextPokemon['sprites']['other']['dream_world']['front_default']}">
         </div>
         <div id="statsLink" class="pagination">
             <a href="#" onclick="switchStats1()" class="active">Base Stats</a>
@@ -100,6 +110,12 @@ function showCardHTML(i) {
 }
 
 
+/**
+ * Returns the HTML string for the searched Pokemon in the overview.
+ * @param {Object} result - The data of the Pokemon that was searched for.
+ * @param {number} ID - The index of the searched Pokemon.
+ * @return {string} - The HTML string for the searched Pokemon in the overview.
+ */
 function searchPokemonHTML(result, ID){
     return `
     <div onclick="showCard(${ID})" id="previewBox${ID}" class="preview-box">

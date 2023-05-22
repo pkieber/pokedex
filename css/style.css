@@ -361,6 +361,7 @@ section {
     line-height: 16px;
     text-align: start;
     padding-left: 10px;
+    border-radius: 5px;
 }
 
 .progress-bar-striped {
