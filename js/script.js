@@ -6,7 +6,7 @@ let selectedPokemon;
 let previousPokemon;
 let nextPokemon;
 let firstPokemon = 1;
-let lastPokemon = 101; // Generation I-V: 649 Pokemon
+let lastPokemon = 151; // Generation 1 (Generation I-V: 649 Pokemon)
 let source = `https://pokeapi.co/api/v2/pokemon/`;
 let allPokemon = [];
 
@@ -17,6 +17,10 @@ let allPokemon = [];
  * and then calls the `renderOverview` function to display this data.
  */
 async function loadPokemon() {
+    // Show the loading overlay.
+    let loader = document.getElementById('loading-overlay');
+    loader.style.display = 'block';
+    
     for (let i = firstPokemon; i <= lastPokemon; i++) {
         let url = source+`${i}`;
         let response = await fetch(url);
@@ -24,6 +28,8 @@ async function loadPokemon() {
         allPokemon.push(currentPokemon); // See search
         renderOverview(i);
     }
+    // Hide the loading overlay.
+    loader.style.display = 'none';
 }
 
 
@@ -177,8 +183,11 @@ window.addEventListener("click", function(event) {
 
 
 /**
- * Selects the next Pokemon by clicking on icon. 
- * @param {*} i 
+ * Renders the next Pokemon based on the given index.
+ * If the current index is greater than or equal to the index of the last Pokemon, 
+ * it shows the Pokemon at the beginning of the list.
+ * Otherwise, it shows the Pokemon at the index after the current one.
+ * @param {number} i - The index of the current Pokemon.
  */
 function renderNextPokemon(i) {
     if (i>=lastPokemon) {
@@ -190,8 +199,10 @@ function renderNextPokemon(i) {
 
 
 /**
- * Selects the previous Pokemon by clicking on icon. 
- * @param {*} i 
+ * Renders the previous Pokemon based on the given index.
+ * If the current index is less than or equal to 1, it shows the Pokemon at the end of the list.
+ * Otherwise, it shows the Pokemon at the index before the current one.
+ * @param {number} i - The index of the current Pokemon.
  */
 function renderPreviousPokemon(i) {
     if (i<=1) {

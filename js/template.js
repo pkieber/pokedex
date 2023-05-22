@@ -102,9 +102,9 @@ function showCardHTML(i) {
         </div>
     </div>
     <div class="arrows">
-        <img title="Previous Pokemon" id="previousPokemon" onclick="renderPreviousPokemon(${i})" src="img/chevron.left@2x.png" class="icon">
-        <div title="Close Card" class="close-icon" onclick="closeCard()"><img src="img/xmark@2x.png" class="icon"></div>
-        <img title="Next Pokemon" id="nextPokemon" onclick="renderNextPokemon(${i})" src="img/chevron.right@2x.png" class="icon">
+        <img title="Previous Pokemon" id="previousPokemon" onclick="renderPreviousPokemon(${i})" src="img/left.png" class="icon">
+        <div title="Close Card" class="close-icon" onclick="closeCard()"><img src="img/xmark.png" class="icon"></div>
+        <img title="Next Pokemon" id="nextPokemon" onclick="renderNextPokemon(${i})" src="img/right.png" class="icon">
     </div>
     `
 }
